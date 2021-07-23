@@ -5,3 +5,39 @@ service vendor.fps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.
     class late_start
     user system
     group system input sdcard_rw uhid
+    
+on boot
+    # Fingerprint Permissions
+    chown system system /dev/goodix_fp
+    chmod 0644 /dev/goodix_fp
+
+    chown system system /sys/devices/soc/soc:fpc1020/compatible_all
+    chmod 0664 /sys/devices/soc/soc:fpc1020/compatible_all
+    chown system system /sys/devices/soc/soc:fpc1020/irq
+    chmod 0660 /sys/devices/soc/soc:fpc1020/irq
+    chown system system /sys/devices/soc/soc:fpc1020/hw_reset
+    chmod 0660 /sys/devices/soc/soc:fpc1020/hw_reset
+    chown system system /sys/devices/soc/soc:fpc1020/wakeup_enable
+    chmod 0660 /sys/devices/soc/soc:fpc1020/wakeup_enable
+
+on property:sys.fp.vendor=switchf
+    setprop sys.fp.vendor searchf
+    setprop fpc.fp.miui.token 0
+    setprop ro.boot.fpsensor fpc
+    setprop ro.hardware.fingerprint searchf
+    start vendor.fps_hal
+
+on property:sys.fp.onstart=1
+   setprop goodix.fp.miui.analyse 1
+   setprop goodix.fp.miui.token 0
+   setprop ro.boot.fpsensor gdx
+   setprop ro.hardware.fingerprint goodix
+   start vendor.fps_hal
+
+on post-fs-data
+    mkdir /data/vendor/fpc 0770 system system
+    chown system system /data/vendor/fpc/calibration_image.pndat
+    chmod 0600 /data/vendor/fpc/calibration_image.pndat
+    mkdir /data/vendor/goodix 0770 system system
+    mkdir /mnt/vendor/persist/fpc 0770 system system
+    chown system system /data/vendor

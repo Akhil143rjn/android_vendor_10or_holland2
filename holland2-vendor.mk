@@ -46,6 +46,7 @@ PRODUCT_COPY_FILES += \
     vendor/10or/holland2/proprietary/lib/libwfduibcsrc.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libwfduibcsrc.so \
     vendor/10or/holland2/proprietary/lib/libwfduibcsrcinterface.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libwfduibcsrcinterface.so \
     vendor/10or/holland2/proprietary/lib64/libFileMux.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libFileMux.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libgf_ca.so:$(TARGET_COPY_OUT_VENDOR)/lib/libgf_ca.so \
     vendor/10or/holland2/proprietary/vendor/lib64/libgf_algo.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libgf_algo.so \
     vendor/10or/holland2/proprietary/vendor/lib64/libgf_ca.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libgf_ca.so \
     vendor/10or/holland2/proprietary/vendor/lib64/libgf_hal.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libgf_hal.so \
@@ -189,14 +190,31 @@ PRODUCT_COPY_FILES += \
     vendor/10or/holland2/proprietary/vendor/bin/xtra-daemon:$(TARGET_COPY_OUT_VENDOR)/bin/xtra-daemon \
     vendor/10or/holland2/proprietary/vendor/bin/xtwifi-client:$(TARGET_COPY_OUT_VENDOR)/bin/xtwifi-client \
     vendor/10or/holland2/proprietary/vendor/bin/xtwifi-inet-agent:$(TARGET_COPY_OUT_VENDOR)/bin/xtwifi-inet-agent \
-    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb \
-    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/QRD/QRD_General_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/QRD/QRD_General_cal.acdb \
-    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/QRD/QRD_Global_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/QRD/QRD_Global_cal.acdb \
-    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/QRD/QRD_Handset_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/QRD/QRD_Handset_cal.acdb \
-    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/QRD/QRD_Hdmi_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/QRD/QRD_Hdmi_cal.acdb \
-    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/QRD/QRD_Headset_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/QRD/QRD_Headset_cal.acdb \
-    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/QRD/QRD_Speaker_cal.acdb \
-    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/adsp_avs_config.acdb:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/adsp_avs_config.acdb \
+    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/adsp_avs_config.acdb:$(TARGET_COPY_OUT_VENDOR)/acdbdata/adsp_avs_config.acdb \
+    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/acdbdata/MTP/MTP_Headset_cal.acdb \
+    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/acdbdata/MTP/MTP_Handset_cal.acdb \
+    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/acdbdata/MTP/MTP_Global_cal.acdb \
+    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/acdbdata/MTP/MTP_Hdmi_cal.acdb \
+    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/MTP/MTP_General_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/acdbdata/MTP/MTP_General_cal.acdb \
+    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/acdbdata/MTP/MTP_Bluetooth_cal.acdb \
+    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/acdbdata/MTP/MTP_Speaker_cal.acdb \
+    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp:$(TARGET_COPY_OUT_VENDOR)/acdbdata/MTP/MTP_workspaceFile.qwsp \
+    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Headset_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Headset_cal.acdb \
+    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Global_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Global_cal.acdb \
+    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Hdmi_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Hdmi_cal.acdb \
+    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Handset_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Handset_cal.acdb \
+    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Bluetooth_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Bluetooth_cal.acdb \
+    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_workspaceFile.qwsp:$(TARGET_COPY_OUT_VENDOR)/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_workspaceFile.qwsp \
+    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_General_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_General_cal.acdb \
+    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Speaker_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Speaker_cal.acdb \
+    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/QRD/QRD_Handset_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/acdbdata/QRD/QRD_Handset_cal.acdb \
+    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/QRD/QRD_Hdmi_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/acdbdata/QRD/QRD_Hdmi_cal.acdb \
+    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/acdbdata/QRD/QRD_Speaker_cal.acdb \
+    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/QRD/QRD_workspaceFile.qwsp:$(TARGET_COPY_OUT_VENDOR)/acdbdata/QRD/QRD_workspaceFile.qwsp \
+    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/acdbdata/QRD/QRD_Bluetooth_cal.acdb \
+    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/QRD/QRD_Global_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/acdbdata/QRD/QRD_Global_cal.acdb \
+    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/QRD/QRD_General_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/acdbdata/QRD/QRD_General_cal.acdb \
+    vendor/10or/holland2/proprietary/vendor/etc/acdbdata/QRD/QRD_Headset_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/acdbdata/QRD/QRD_Headset_cal.acdb \
     vendor/10or/holland2/proprietary/vendor/etc/camera/camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camera_config.xml \
     vendor/10or/holland2/proprietary/vendor/etc/camera/vince_imx486_ofilm_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/vince_imx486_ofilm_chromatix.xml \
     vendor/10or/holland2/proprietary/vendor/etc/camera/vince_imx486_ofilm_chromatix_india.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/vince_imx486_ofilm_chromatix_india.xml \
@@ -297,6 +315,26 @@ PRODUCT_COPY_FILES += \
     vendor/10or/holland2/proprietary/vendor/firmware/wlan/prima/WCNSS_cfg.dat:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_cfg.dat \
     vendor/10or/holland2/proprietary/vendor/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
     vendor/10or/holland2/proprietary/vendor/framework/com.fingerprints.extension.jar:$(TARGET_COPY_OUT_VENDOR)/framework/com.fingerprints.extension.jar \
+    vendor/10or/holland2/proprietary/vendor/lib/camera.device@3.4-external-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib/camera.device@3.4-external-impl.so \
+    vendor/10or/holland2/proprietary/vendor/lib/camera.device@3.4-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib/camera.device@3.4-impl.so \
+    vendor/10or/holland2/proprietary/vendor/lib/camera.device@3.5-external-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib/camera.device@3.5-external-impl.so \
+    vendor/10or/holland2/proprietary/vendor/lib/camera.device@3.5-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib/camera.device@3.5-impl.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libarcsoft_low_light_shot.so:$(TARGET_COPY_OUT_VENDOR)/lib/libarcsoft_low_light_shot.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libmmcamera_dummyalgo.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmmcamera_dummyalgo.so \
+    vendor/10or/holland2/proprietary/vendor/lib64/camera.device@3.4-external-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera.device@3.4-external-impl.so \
+    vendor/10or/holland2/proprietary/vendor/lib64/camera.device@3.4-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera.device@3.4-impl.so \
+    vendor/10or/holland2/proprietary/vendor/lib64/camera.device@3.5-external-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera.device@3.5-external-impl.so \
+    vendor/10or/holland2/proprietary/vendor/lib64/camera.device@3.5-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/camera.device@3.5-impl.so \
+    vendor/10or/holland2/proprietary/vendor/lib64/libmmcamera2_frame_algorithm.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmmcamera2_frame_algorithm.so \
+    vendor/10or/holland2/proprietary/vendor/lib64/libmmcamera2_is.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmmcamera2_is.so \
+    vendor/10or/holland2/proprietary/vendor/lib64/libmmcamera2_q3a_core.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmmcamera2_q3a_core.so \
+    vendor/10or/holland2/proprietary/vendor/lib64/libmmcamera2_stats_algorithm.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmmcamera2_stats_algorithm.so \
+    vendor/10or/holland2/proprietary/vendor/lib64/libmmcamera_cac3_lib.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmmcamera_cac3_lib.so \
+    vendor/10or/holland2/proprietary/vendor/lib64/libmmcamera_dbg.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmmcamera_dbg.so \
+    vendor/10or/holland2/proprietary/vendor/lib64/libmmcamera_tintless_algo.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmmcamera_tintless_algo.so \
+    vendor/10or/holland2/proprietary/vendor/lib64/libmmcamera_tintless_bg_pca_algo.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmmcamera_tintless_bg_pca_algo.so \
+    vendor/10or/holland2/proprietary/vendor/lib64/libts_detected_face_hal.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libts_detected_face_hal.so \
+    vendor/10or/holland2/proprietary/vendor/lib64/libts_face_beautify_hal.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libts_face_beautify_hal.so \
     vendor/10or/holland2/proprietary/vendor/lib/camera.device@1.0-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib/camera.device@1.0-impl.so \
     vendor/10or/holland2/proprietary/vendor/lib/camera.device@3.2-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib/camera.device@3.2-impl.so \
     vendor/10or/holland2/proprietary/vendor/lib/camera.device@3.3-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib/camera.device@3.3-impl.so \
@@ -364,6 +402,163 @@ PRODUCT_COPY_FILES += \
     vendor/10or/holland2/proprietary/vendor/lib/libbluetooth_audio_session_qti.so:$(TARGET_COPY_OUT_VENDOR)/lib/libbluetooth_audio_session_qti.so \
     vendor/10or/holland2/proprietary/vendor/lib/libc2d30_bltlib.so:$(TARGET_COPY_OUT_VENDOR)/lib/libc2d30_bltlib.so \
     vendor/10or/holland2/proprietary/vendor/lib/libchromaflash.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromaflash.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_ohs0544_mono_postproc.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_ohs0544_mono_postproc.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_ohs0544_mono_video.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_ohs0544_mono_video.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_s5k3p8_default_preview_bu64297.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_s5k3p8_default_preview_bu64297.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_ohs0544_mono_default_preview_dw9800w.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_ohs0544_mono_default_preview_dw9800w.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov16885_sunny_hfr_60.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov16885_sunny_hfr_60.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_s5k3p8_hfr_60_bu64297.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_s5k3p8_hfr_60_bu64297.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_ohs0544_mono_common.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_ohs0544_mono_common.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_cbahc13_mono_postproc.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_cbahc13_mono_postproc.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_cbahc14_hfr_120_dw9800w_cbahc14.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_cbahc14_hfr_120_dw9800w_cbahc14.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_cbahc13_mono_cpp_snapshot.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_cbahc13_mono_cpp_snapshot.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libmmcamera_ov13358_ohs0544_mono.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmmcamera_ov13358_ohs0544_mono.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libmmcamera_ov13855_gt24c64a_chicony_eeprom.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmmcamera_ov13855_gt24c64a_chicony_eeprom.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_cbahc13_mono_cpp_video.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_cbahc13_mono_cpp_video.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_s5k3p8_cpp_hfr_120.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_s5k3p8_cpp_hfr_120.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_ohs0544_cpp_hfr_90.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_ohs0544_cpp_hfr_90.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov16885_sunny_cpp_snapshot.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov16885_sunny_cpp_snapshot.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov16885_sunny_preview.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov16885_sunny_preview.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_ohs0544_default_video_dw9800w.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_ohs0544_default_video_dw9800w.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_cbahc14_liveshot.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_cbahc14_liveshot.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_ohs0544_mono_cpp_hfr_90.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_ohs0544_mono_cpp_hfr_90.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libmmcamera_ov13855_cbahc14_chicony.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmmcamera_ov13855_cbahc14_chicony.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_ohs0544_mono_default_video_dw9800w.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_ohs0544_mono_default_video_dw9800w.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov16885_sunny_cpp_video.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov16885_sunny_cpp_video.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_s5k3p8_cpp_video.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_s5k3p8_cpp_video.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_cbahc14_default_video_dw9800w_cbahc14.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_cbahc14_default_video_dw9800w_cbahc14.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_s5k3p8_cpp_hfr_90.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_s5k3p8_cpp_hfr_90.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_ohs0544_cpp_snapshot.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_ohs0544_cpp_snapshot.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_ohs0544_cpp_liveshot.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_ohs0544_cpp_liveshot.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_cbahc14_cpp_hfr_120.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_cbahc14_cpp_hfr_120.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov16885_sunny_hfr_90.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov16885_sunny_hfr_90.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_cbahc14_default_preview_dw9800w_cbahc14.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_cbahc14_default_preview_dw9800w_cbahc14.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_cbahc13_mono_hfr_60.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_cbahc13_mono_hfr_60.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_ohs0544_postproc.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_ohs0544_postproc.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_cbahc13_mono_hfr_120.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_cbahc13_mono_hfr_120.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_ohs0544_snapshot.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_ohs0544_snapshot.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_ohs0544_mono_cpp_hfr_60.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_ohs0544_mono_cpp_hfr_60.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_cbahc14_video.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_cbahc14_video.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_ohs0544_hfr_90_dw9800w.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_ohs0544_hfr_90_dw9800w.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_ohs0544_mono_cpp_snapshot.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_ohs0544_mono_cpp_snapshot.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_cbahc13_mono_zsl_preview_dw9800w_cbahc14.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_cbahc13_mono_zsl_preview_dw9800w_cbahc14.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_s5k3p8_postproc.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_s5k3p8_postproc.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov16885_sunny_hfr_120_nolens.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov16885_sunny_hfr_120_nolens.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_ohs0544_default_preview_dw9800w.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_ohs0544_default_preview_dw9800w.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov16885_sunny_hfr_120.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov16885_sunny_hfr_120.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_cbahc13_mono_hfr_60_dw9800w_cbahc14.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_cbahc13_mono_hfr_60_dw9800w_cbahc14.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov16885_sunny_common.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov16885_sunny_common.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_cbahc13_mono_cpp_hfr_60.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_cbahc13_mono_cpp_hfr_60.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_s5k3p8_default_video_bu64297.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_s5k3p8_default_video_bu64297.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_ohs0544_mono_hfr_120.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_ohs0544_mono_hfr_120.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_cbahc14_hfr_120.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_cbahc14_hfr_120.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_cbahc14_hfr_90.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_cbahc14_hfr_90.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libmmcamera_ov13358_gt24c64a_chicony_eeprom.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmmcamera_ov13358_gt24c64a_chicony_eeprom.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov16885_sunny_hfr_90_nolens.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov16885_sunny_hfr_90_nolens.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libmmcamera_ov16885_fm24c64d_eeprom.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmmcamera_ov16885_fm24c64d_eeprom.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_cbahc13_mono_cpp_preview.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_cbahc13_mono_cpp_preview.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_ohs0544_liveshot.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_ohs0544_liveshot.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_cbahc14_cpp_hfr_60.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_cbahc14_cpp_hfr_60.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_cbahc14_cpp_liveshot.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_cbahc14_cpp_liveshot.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_cbahc13_mono_liveshot.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_cbahc13_mono_liveshot.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_ohs0544_mono_cpp_hfr_120.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_ohs0544_mono_cpp_hfr_120.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_ohs0544_mono_cpp_video.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_ohs0544_mono_cpp_video.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov16885_sunny_postproc.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov16885_sunny_postproc.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_ohs0544_zsl_video_dw9800w.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_ohs0544_zsl_video_dw9800w.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_s5k3p8_hfr_120_bu64297.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_s5k3p8_hfr_120_bu64297.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov16885_sunny_cpp_preview.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov16885_sunny_cpp_preview.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_ohs0544_mono_liveshot.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_ohs0544_mono_liveshot.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_ohs0544_mono_zsl_video_dw9800w.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_ohs0544_mono_zsl_video_dw9800w.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov16885_sunny_cpp_hfr_60.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov16885_sunny_cpp_hfr_60.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov16885_sunny_snapshot.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov16885_sunny_snapshot.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_cbahc13_mono_hfr_90_dw9800w_cbahc14.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_cbahc13_mono_hfr_90_dw9800w_cbahc14.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_cbahc14_postproc.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_cbahc14_postproc.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_ohs0544_mono_snapshot.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_ohs0544_mono_snapshot.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov16885_sunny_cpp_hfr_120.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov16885_sunny_cpp_hfr_120.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_cbahc13_mono_zsl_video_dw9800w_cbahc14.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_cbahc13_mono_zsl_video_dw9800w_cbahc14.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libmmcamera_s5k3p8_fm24c64d_eeprom.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmmcamera_s5k3p8_fm24c64d_eeprom.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov16885_sunny_default_preview_nolens.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov16885_sunny_default_preview_nolens.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_cbahc14_cpp_video.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_cbahc14_cpp_video.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_ohs0544_mono_hfr_90.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_ohs0544_mono_hfr_90.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_s5k3p8_zsl_preview_bu64297.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_s5k3p8_zsl_preview_bu64297.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_cbahc13_mono_preview.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_cbahc13_mono_preview.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libactuator_dw9800w.so:$(TARGET_COPY_OUT_VENDOR)/lib/libactuator_dw9800w.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_cbahc14_hfr_60.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_cbahc14_hfr_60.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_cbahc13_mono_video.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_cbahc13_mono_video.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_s5k3p8_cpp_hfr_60.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_s5k3p8_cpp_hfr_60.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_cbahc13_mono_default_preview_dw9800w_cbahc14.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_cbahc13_mono_default_preview_dw9800w_cbahc14.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_ohs0544_cpp_hfr_60.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_ohs0544_cpp_hfr_60.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libmmcamera_s5k3p8.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmmcamera_s5k3p8.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov16885_sunny_default_video_nolens.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov16885_sunny_default_video_nolens.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_s5k3p8_hfr_60.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_s5k3p8_hfr_60.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_ohs0544_hfr_60.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_ohs0544_hfr_60.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_cbahc13_mono_cpp_hfr_90.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_cbahc13_mono_cpp_hfr_90.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_s5k3p8_hfr_90_bu64297.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_s5k3p8_hfr_90_bu64297.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_ohs0544_mono_zsl_preview_dw9800w.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_ohs0544_mono_zsl_preview_dw9800w.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_s5k3p8_zsl_video_bu64297.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_s5k3p8_zsl_video_bu64297.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libmmcamera_ov13358_cbahc13_mono.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmmcamera_ov13358_cbahc13_mono.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_ohs0544_preview.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_ohs0544_preview.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_ohs0544_mono_hfr_90_dw9800w.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_ohs0544_mono_hfr_90_dw9800w.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libmmcamera_ov13358_gt24c64a_ofg_eeprom.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmmcamera_ov13358_gt24c64a_ofg_eeprom.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov16885_sunny_cpp_liveshot.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov16885_sunny_cpp_liveshot.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_ohs0544_mono_hfr_60.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_ohs0544_mono_hfr_60.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libactuator_dw9800w_cbahc14.so:$(TARGET_COPY_OUT_VENDOR)/lib/libactuator_dw9800w_cbahc14.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov16885_sunny_hfr_60_nolens.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov16885_sunny_hfr_60_nolens.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_cbahc13_mono_hfr_90.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_cbahc13_mono_hfr_90.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_cbahc13_mono_hfr_120_dw9800w_cbahc14.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_cbahc13_mono_hfr_120_dw9800w_cbahc14.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_ohs0544_cpp_preview.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_ohs0544_cpp_preview.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_cbahc13_mono_default_video_dw9800w_cbahc14.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_cbahc13_mono_default_video_dw9800w_cbahc14.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_cbahc14_cpp_hfr_90.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_cbahc14_cpp_hfr_90.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_ohs0544_cpp_video.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_ohs0544_cpp_video.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_ohs0544_mono_cpp_liveshot.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_ohs0544_mono_cpp_liveshot.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_ohs0544_video.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_ohs0544_video.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_cbahc13_mono_snapshot.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_cbahc13_mono_snapshot.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov16885_sunny_zsl_preview_nolens.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov16885_sunny_zsl_preview_nolens.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libmmcamera_ov13855_gt24c64a_ofg_eeprom.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmmcamera_ov13855_gt24c64a_ofg_eeprom.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_cbahc14_hfr_90_dw9800w_cbahc14.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_cbahc14_hfr_90_dw9800w_cbahc14.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_s5k3p8_cpp_liveshot.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_s5k3p8_cpp_liveshot.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_cbahc13_mono_cpp_hfr_120.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_cbahc13_mono_cpp_hfr_120.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_cbahc14_snapshot.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_cbahc14_snapshot.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_s5k3p8_default_video.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_s5k3p8_default_video.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_cbahc13_mono_common.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_cbahc13_mono_common.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_s5k3p8_preview.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_s5k3p8_preview.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libmmcamera_ov16885_sunny.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmmcamera_ov16885_sunny.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_ohs0544_hfr_120_dw9800w.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_ohs0544_hfr_120_dw9800w.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_ohs0544_mono_preview.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_ohs0544_mono_preview.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_ohs0544_hfr_60_dw9800w.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_ohs0544_hfr_60_dw9800w.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_s5k3p8_cpp_preview.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_s5k3p8_cpp_preview.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_ohs0544_cpp_hfr_120.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_ohs0544_cpp_hfr_120.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_cbahc14_hfr_60_dw9800w_cbahc14.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_cbahc14_hfr_60_dw9800w_cbahc14.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_cbahc14_zsl_preview_dw9800w_cbahc14.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_cbahc14_zsl_preview_dw9800w_cbahc14.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_cbahc14_common.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_cbahc14_common.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_s5k3p8_hfr_120.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_s5k3p8_hfr_120.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_cbahc14_preview.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_cbahc14_preview.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_cbahc13_mono_cpp_liveshot.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_cbahc13_mono_cpp_liveshot.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_s5k3p8_snapshot.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_s5k3p8_snapshot.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libactuator_dw9800w_cbahc13.so:$(TARGET_COPY_OUT_VENDOR)/lib/libactuator_dw9800w_cbahc13.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov16885_sunny_default_video.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov16885_sunny_default_video.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov16885_sunny_cpp_hfr_90.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov16885_sunny_cpp_hfr_90.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_ohs0544_mono_cpp_preview.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_ohs0544_mono_cpp_preview.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov16885_sunny_zsl_video_nolens.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov16885_sunny_zsl_video_nolens.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_ohs0544_mono_hfr_60_dw9800w.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_ohs0544_mono_hfr_60_dw9800w.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_cbahc14_cpp_snapshot.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_cbahc14_cpp_snapshot.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_ohs0544_common.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_ohs0544_common.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13358_ohs0544_mono_hfr_120_dw9800w.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13358_ohs0544_mono_hfr_120_dw9800w.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_cbahc14_cpp_preview.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_cbahc14_cpp_preview.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_ohs0544_hfr_90.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_ohs0544_hfr_90.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_s5k3p8_hfr_90.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_s5k3p8_hfr_90.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_ohs0544_zsl_preview_dw9800w.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_ohs0544_zsl_preview_dw9800w.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_s5k3p8_common.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_s5k3p8_common.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_s5k3p8_cpp_snapshot.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_s5k3p8_cpp_snapshot.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libmmcamera_ov13855_ohs0544_ofg.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmmcamera_ov13855_ohs0544_ofg.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_ohs0544_hfr_120.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_ohs0544_hfr_120.so \
+    vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov13855_cbahc14_zsl_video_dw9800w_cbahc14.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov13855_cbahc14_zsl_video_dw9800w_cbahc14.so \
+    vendor/10or/holland2/proprietary/vendor/etc/camera/ov13358_ohs0544_mono_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/ov13358_ohs0544_mono_chromatix.xml \
+    vendor/10or/holland2/proprietary/vendor/etc/camera/ov13358_cbahc13_mono_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/ov13358_cbahc13_mono_chromatix.xml \
+    vendor/10or/holland2/proprietary/vendor/etc/camera/ov13855_ohs0544_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/ov13855_ohs0544_chromatix.xml \
+    vendor/10or/holland2/proprietary/vendor/etc/camera/ov16885_sunny_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/ov16885_sunny_chromatix.xml \
+    vendor/10or/holland2/proprietary/vendor/etc/camera/ov13855_cbahc14_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/ov13855_cbahc14_chromatix.xml \
+    vendor/10or/holland2/proprietary/vendor/etc/camera/s5k3p8_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/s5k3p8_chromatix.xml \
     vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov12a10_sunny_vince_4k_preview_dw9763.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov12a10_sunny_vince_4k_preview_dw9763.so \
     vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov12a10_sunny_vince_4k_video_dw9763.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov12a10_sunny_vince_4k_video_dw9763.so \
     vendor/10or/holland2/proprietary/vendor/lib/libchromatix_ov12a10_sunny_vince_common.so:$(TARGET_COPY_OUT_VENDOR)/lib/libchromatix_ov12a10_sunny_vince_common.so \
