@@ -113,7 +113,7 @@ cc_prebuilt_library_shared {
 	compile_multilib: "both",
 	check_elf_files: false,
 	prefer: true,
-	system_ext_specific: true,
+	s_specificoc: true,
 }
 
 android_app_import {
@@ -190,7 +190,7 @@ android_app_import {
 	dex_preopt: {
 		enabled: false,
 	},
-	system_ext_specific: true,
+	s_specificoc: true,
 }
 
 android_app_import {
@@ -201,7 +201,7 @@ android_app_import {
 	dex_preopt: {
 		enabled: false,
 	},
-	system_ext_specific: true,
+	s_specificoc: true,
 }
 
 android_app_import {
@@ -212,7 +212,7 @@ android_app_import {
 	dex_preopt: {
 		enabled: false,
 	},
-	system_ext_specific: true,
+	s_specificoc: true,
 }
 
 android_app_import {
@@ -224,7 +224,7 @@ android_app_import {
 		enabled: false,
 	},
 	privileged: true,
-	system_ext_specific: true,
+	s_specificoc: true,
 }
 
 android_app_import {
@@ -236,7 +236,7 @@ android_app_import {
 		enabled: false,
 	},
 	privileged: true,
-	system_ext_specific: true,
+	s_specificoc: true,
 }
 
 android_app_import {
@@ -248,7 +248,7 @@ android_app_import {
 		enabled: false,
 	},
 	privileged: true,
-	system_ext_specific: true,
+	s_specificoc: true,
 }
 
 dex_import {
@@ -261,14 +261,14 @@ dex_import {
 	name: "com.qti.dpmframework",
 	owner: "10or",
 	jars: ["proprietary/system_ext/framework/com.qti.dpmframework.jar"],
-	system_ext_specific: true,
+	s_specificoc: true,
 }
 
 dex_import {
 	name: "dpmapi",
 	owner: "10or",
 	jars: ["proprietary/system_ext/framework/dpmapi.jar"],
-	system_ext_specific: true,
+	s_specificoc: true,
 }
 
 prebuilt_etc_xml {
@@ -304,4 +304,3 @@ cc_prebuilt_binary {
 	srcs: ["proprietary/bin/chargeonlymode"],
 	prefer: true,
 }
-
